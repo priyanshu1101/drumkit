@@ -7,10 +7,12 @@ function clickfunc()
 {
     // alert("Clicked!!");
     sound(this.innerHTML);
+    keyAnimation(this.innerHTML);
 }
 function keyfunc(event) {
     // alert("Pressed!!");
      sound(event.key);   
+     keyAnimation(event.key);
 }
 function sound(key)
 {
@@ -44,11 +46,14 @@ function sound(key)
             tone.play();
             break;
     }
+}
+function keyAnimation(key)
+{
     var activekey=document.querySelector("."+key);
-        console.log(activekey);
-        activekey.classList.add("pressed");
-        setTimeout(function()
-        {
-            activekey.classList.remove("pressed");
-        },100);
+    console.log(activekey);
+    activekey.classList.add("pressed");
+    setTimeout(function()
+    {
+        activekey.classList.remove("pressed");
+    },100);
 }
