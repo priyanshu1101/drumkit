@@ -44,4 +44,11 @@ function sound(key)
             tone.play();
             break;
     }
+    var activekey=document.querySelector("."+key);
+        console.log(activekey);
+        activekey.classList.add("pressed");
+        setTimeout(function()
+        {
+            activekey.classList.remove("pressed");
+        },100);
 }
